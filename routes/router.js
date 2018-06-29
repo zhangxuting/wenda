@@ -16,7 +16,4 @@ router.get('/signin',user.showSignin)
       .get('/signout',user.handeSingout)
 
 
-
-
-
 module.exports = router;       

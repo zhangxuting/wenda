@@ -44,24 +44,7 @@
     </div>
     <script src="/node_modules/jquery/dist/jquery.js"></script>
     <script>
-       $(".btn-success").on('submit',function(e){
-              
-            e.preventDefault();
-
-            var formData = $('#signup_form').serialize();
-
-            $.ajax({
-                url: '/signup',
-                type: 'post',
-                data: formData,
-                dataType: 'json',
-                success: function(results){
-                     console.log(results);
-                }
-            })
-
-
-       })
+   
 
     </script>
 </body>
