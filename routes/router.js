@@ -15,5 +15,13 @@ router.get('/signin',user.showSignin)
       .post('/signup',user.handeSingup)
       .get('/signout',user.handeSingout)
 
-
+// 3 topic.js 
+router
+  .get('/topic/create', topic.showCreate)
+  .post('/topic/create', topic.handleCreate)
+  // 动态路由，可以传递参数
+  .get('/topic/:topicID', topic.showTopic)
+  .get('/topic/:topicID/edit', topic.showEdit)
+  .post('/topic/:topicID/edit', topic.handleEdit)
+  .get('/topic/:topicID/delete', topic.handleDelete)
 module.exports = router;       

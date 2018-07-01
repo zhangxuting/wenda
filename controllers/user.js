@@ -25,6 +25,8 @@ exports.handeSingin = (req,res)=>{
                 msg: '密码错误'
             })
         }else {
+            delete user.password;
+            req.session.user = user;
             return res.json({
                 code: 200,
                 msg: '登录成功'
@@ -95,5 +97,7 @@ exports.handeSingup = (req,res)=>{
 
 
 exports.handeSingout = (req,res)=>{
-    res.send('s')
+    //销毁session,跳转到登录页面
+    req.session.destroy();
+    res.redirect('/signin');
 }
